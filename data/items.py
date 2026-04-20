@@ -1,0 +1,342 @@
+"""Item database."""
+
+ITEMS = {
+    # Healing items
+    "potion": {
+        "name": "Potion",
+        "category": "healing",
+        "price": 300,
+        "effect": "heal_hp",
+        "value": 20,
+        "description": "Restores 20 HP to a monster.",
+    },
+    "super_potion": {
+        "name": "Super Potion",
+        "category": "healing",
+        "price": 700,
+        "effect": "heal_hp",
+        "value": 50,
+        "description": "Restores 50 HP to a monster.",
+    },
+    "hyper_potion": {
+        "name": "Hyper Potion",
+        "category": "healing",
+        "price": 1500,
+        "effect": "heal_hp",
+        "value": 120,
+        "description": "Restores 120 HP to a monster.",
+    },
+    "max_potion": {
+        "name": "Max Potion",
+        "category": "healing",
+        "price": 2500,
+        "effect": "heal_hp_full",
+        "description": "Fully restores HP to a monster.",
+    },
+    "revive": {
+        "name": "Revive",
+        "category": "healing",
+        "price": 1500,
+        "effect": "revive",
+        "value": 0.5,
+        "description": "Revives a fainted monster with half HP.",
+    },
+    "max_revive": {
+        "name": "Max Revive",
+        "category": "healing",
+        "price": 4000,
+        "effect": "revive_full",
+        "description": "Revives a fainted monster with full HP.",
+    },
+    "full_restore": {
+        "name": "Full Restore",
+        "category": "healing",
+        "price": 3000,
+        "effect": "heal_full_status",
+        "description": "Fully restores HP and cures all status conditions.",
+    },
+
+    # Status healing
+    "antidote": {
+        "name": "Antidote",
+        "category": "status",
+        "price": 100,
+        "effect": "cure_status",
+        "status": "poison",
+        "description": "Cures a poisoned monster.",
+    },
+    "burn_heal": {
+        "name": "Burn Heal",
+        "category": "status",
+        "price": 250,
+        "effect": "cure_status",
+        "status": "burn",
+        "description": "Cures a burned monster.",
+    },
+    "ice_heal": {
+        "name": "Ice Heal",
+        "category": "status",
+        "price": 250,
+        "effect": "cure_status",
+        "status": "freeze",
+        "description": "Defrosts a frozen monster.",
+    },
+    "awakening": {
+        "name": "Awakening",
+        "category": "status",
+        "price": 250,
+        "effect": "cure_status",
+        "status": "sleep",
+        "description": "Wakes up a sleeping monster.",
+    },
+    "paralyze_heal": {
+        "name": "Paralyze Heal",
+        "category": "status",
+        "price": 200,
+        "effect": "cure_status",
+        "status": "paralysis",
+        "description": "Heals a paralyzed monster.",
+    },
+    "full_heal": {
+        "name": "Full Heal",
+        "category": "status",
+        "price": 600,
+        "effect": "cure_all_status",
+        "description": "Cures all status conditions from a monster.",
+    },
+
+    # PP restoration
+    "ether": {
+        "name": "Ether",
+        "category": "pp",
+        "price": 1200,
+        "effect": "restore_pp",
+        "value": 10,
+        "description": "Restores 10 PP to one move.",
+    },
+    "max_ether": {
+        "name": "Max Ether",
+        "category": "pp",
+        "price": 2000,
+        "effect": "restore_pp_full",
+        "description": "Fully restores PP to one move.",
+    },
+    "elixir": {
+        "name": "Elixir",
+        "category": "pp",
+        "price": 3000,
+        "effect": "restore_pp_all",
+        "value": 10,
+        "description": "Restores 10 PP to all moves.",
+    },
+    "max_elixir": {
+        "name": "Max Elixir",
+        "category": "pp",
+        "price": 4500,
+        "effect": "restore_pp_all_full",
+        "description": "Fully restores PP to all moves.",
+    },
+
+    # Stat boosters (permanent)
+    "hp_up": {
+        "name": "HP Up",
+        "category": "vitamin",
+        "price": 9800,
+        "effect": "increase_stat",
+        "stat": "hp",
+        "description": "Slightly raises the max HP of a monster.",
+    },
+    "protein": {
+        "name": "Protein",
+        "category": "vitamin",
+        "price": 9800,
+        "effect": "increase_stat",
+        "stat": "attack",
+        "description": "Slightly raises the Attack stat of a monster.",
+    },
+    "iron": {
+        "name": "Iron",
+        "category": "vitamin",
+        "price": 9800,
+        "effect": "increase_stat",
+        "stat": "defense",
+        "description": "Slightly raises the Defense stat of a monster.",
+    },
+    "calcium": {
+        "name": "Calcium",
+        "category": "vitamin",
+        "price": 9800,
+        "effect": "increase_stat",
+        "stat": "special",
+        "description": "Slightly raises the Special Attack stat of a monster.",
+    },
+    "zinc": {
+        "name": "Zinc",
+        "category": "vitamin",
+        "price": 9800,
+        "effect": "increase_stat",
+        "stat": "special_defense",
+        "description": "Slightly raises the Special Defense stat of a monster.",
+    },
+    "carbos": {
+        "name": "Carbos",
+        "category": "vitamin",
+        "price": 9800,
+        "effect": "increase_stat",
+        "stat": "speed",
+        "description": "Slightly raises the Speed stat of a monster.",
+    },
+
+    # Rare candy
+    "rare_candy": {
+        "name": "Rare Candy",
+        "category": "special",
+        "price": 4800,
+        "effect": "level_up",
+        "description": "Raises the level of a monster by one.",
+    },
+
+    # Battle items
+    "x_attack": {
+        "name": "X Attack",
+        "category": "battle",
+        "price": 500,
+        "effect": "boost_stat",
+        "stat": "attack",
+        "description": "Boosts the Attack stat in battle.",
+    },
+    "x_defense": {
+        "name": "X Defense",
+        "category": "battle",
+        "price": 550,
+        "effect": "boost_stat",
+        "stat": "defense",
+        "description": "Boosts the Defense stat in battle.",
+    },
+    "x_speed": {
+        "name": "X Speed",
+        "category": "battle",
+        "price": 350,
+        "effect": "boost_stat",
+        "stat": "speed",
+        "description": "Boosts the Speed stat in battle.",
+    },
+    "x_special": {
+        "name": "X Special",
+        "category": "battle",
+        "price": 350,
+        "effect": "boost_stat",
+        "stat": "special",
+        "description": "Boosts the Special Attack stat in battle.",
+    },
+    "x_accuracy": {
+        "name": "X Accuracy",
+        "category": "battle",
+        "price": 950,
+        "effect": "boost_accuracy",
+        "description": "Boosts the accuracy in battle.",
+    },
+    "dire_hit": {
+        "name": "Dire Hit",
+        "category": "battle",
+        "price": 650,
+        "effect": "boost_crit",
+        "description": "Raises the critical hit ratio.",
+    },
+    "guard_spec": {
+        "name": "Guard Spec.",
+        "category": "battle",
+        "price": 700,
+        "effect": "protect_stats",
+        "description": "Protects the party from stat drops.",
+    },
+
+    # Key items (not for sale)
+    "monster_ball": {
+        "name": "Monster Ball",
+        "category": "key",
+        "price": 200,
+        "effect": "catch",
+        "catch_rate": 1.0,
+        "description": "A device for catching wild monsters.",
+    },
+    "great_ball": {
+        "name": "Great Ball",
+        "category": "key",
+        "price": 600,
+        "effect": "catch",
+        "catch_rate": 1.5,
+        "description": "A better ball with a higher catch rate.",
+    },
+    "ultra_ball": {
+        "name": "Ultra Ball",
+        "category": "key",
+        "price": 1200,
+        "effect": "catch",
+        "catch_rate": 2.0,
+        "description": "An ultra-high performance ball.",
+    },
+    "master_ball": {
+        "name": "Master Ball",
+        "category": "key",
+        "price": 0,
+        "effect": "catch",
+        "catch_rate": 255.0,
+        "description": "The ultimate ball that catches any monster without fail.",
+    },
+
+    # TMs/HMs (simplified - teach moves)
+    "tm_case": {
+        "name": "TM Case",
+        "category": "key",
+        "price": 0,
+        "description": "Holds your TMs.",
+    },
+    "hm_case": {
+        "name": "HM Case",
+        "category": "key",
+        "price": 0,
+        "description": "Holds your HMs.",
+    },
+
+    # Miscellaneous key items
+    "old_rod": {
+        "name": "Old Rod",
+        "category": "key",
+        "price": 0,
+        "effect": "fish",
+        "description": "Use it by water to fish for wild aquatic monsters.",
+    },
+    "good_rod": {
+        "name": "Good Rod",
+        "category": "key",
+        "price": 0,
+        "effect": "fish",
+        "description": "A better rod for catching aquatic monsters.",
+    },
+    "super_rod": {
+        "name": "Super Rod",
+        "category": "key",
+        "price": 0,
+        "effect": "fish",
+        "description": "The best rod for catching aquatic monsters.",
+    },
+    "bicycle": {
+        "name": "Bicycle",
+        "category": "key",
+        "price": 0,
+        "effect": "fast_travel",
+        "description": "A folding bicycle that is faster than running shoes.",
+    },
+    "town_map": {
+        "name": "Town Map",
+        "category": "key",
+        "price": 0,
+        "effect": "map",
+        "description": "A map showing the world.",
+    },
+}
+
+def get_item_data(item_id):
+    """Get item data by ID."""
+    return ITEMS.get(item_id, None)
